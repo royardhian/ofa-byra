@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { FormBuilder, FormControl, Validators } from '@angular/forms';
+import { UntypedFormBuilder, UntypedFormControl, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
 
 @Component({
@@ -16,12 +16,12 @@ export class LoginComponent implements OnInit {
     password: ['', Validators.required],
   });
 
-  emailFormControl = new FormControl('', [
+  emailFormControl = new UntypedFormControl('', [
     Validators.required,
     Validators.email,
   ]);
 
-  constructor(private fb: FormBuilder, private router: Router) {}
+  constructor(private fb: UntypedFormBuilder, private router: Router) {}
 
   ngOnInit(): void {}
 
